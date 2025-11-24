@@ -1,0 +1,7 @@
+{
+    "serial": {
+        "port": "COM15",
+        "baudrate": 115200,
+        "timeout": 3
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.vue": "html",
+        "*.css": "tailwindcss",
+        "app_task.h": "c",
+        "algorithm": "c"
+    }
+}
