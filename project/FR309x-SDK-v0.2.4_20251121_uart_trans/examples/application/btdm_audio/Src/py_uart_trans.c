@@ -210,6 +210,7 @@ void py_uart_receive(void)
         uint32_t erase_count = (ptr->file_size + PY_FLASH_SECTOR - 1) / PY_FLASH_SECTOR;
         for (uint32_t addr = 0; addr < erase_count; addr++)
         {
+            printf("flash erase addr = %08d\r\n", addr * PY_FLASH_SECTOR);
             py_uart_flash_erase(addr * PY_FLASH_SECTOR);
             py_uart_send("erase");
         }

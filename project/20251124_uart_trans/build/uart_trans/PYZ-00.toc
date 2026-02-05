@@ -1,4 +1,4 @@
-('D:\\document\\my_github\\串口下载工具\\project\\20251124_uart_trans\\build\\uart_trans\\PYZ-00.pyz',
+('D:\\document\\tf_project\\20251124_uart_trans\\build\\uart_trans\\PYZ-00.pyz',
  [('__future__',
    'D:\\software\\anaconda3\\envs\\f5-tts\\lib\\__future__.py',
    'PYMODULE'),

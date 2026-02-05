@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['test6.py'],
+    ['uart_trans.py'],
     pathex=[],
     binaries=[],
     datas=[],

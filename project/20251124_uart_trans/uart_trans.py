@@ -1,17 +1,8 @@
-"""
-Author: BlueboxChamil
-Date: 2025-11-20 14:03:56
-LastEditTime: 2025-11-20 14:04:24
-FilePath: \test4.py
-Description:
-Copyright (c) 2025 by BlueboxChamil, All Rights Reserved.
-"""
-
 import json
 import asyncio
 import os
 import struct
-from dataclasses import field
+from dataclasses import dataclass
 import binascii
 import sys
 import serial
@@ -20,9 +11,9 @@ import serial
 # 默认配置模板
 default_config = {
     "serial": {
-        "port": "COM15",  # 默认串口号
+        "port": "COM16",  # 默认串口号
         "baudrate": 115200,  # 默认波特率
-        "timeout": 3,  # 默认超时时间，单位：秒
+        "timeout": 5,  # 默认超时时间，单位：秒
     }
 }
 
@@ -31,6 +22,7 @@ send_bin_file = None
 bin_send_offset = 0
 watchdog_event = None
 error_max_count = 0
+last_send_len = 0
 # 串口
 ser = None
 
@@ -38,8 +30,8 @@ ser = None
 class DataPacket:
     header: int = 0xA1  # 固定帧头 uint8_t
     id: int = 0  # uint8_t
-    data_len: int = 0  # uint8_t
-    payload: bytes = field(default_factory=bytes)  # 字节数组
+    data_len: int = 0  # uint16_t
+    payload: bytes  # 字节数组
     checksum: int = 0  # uint8_t
 
     _next_id = 0  # 仅类内部使用，不暴露给外部
@@ -296,6 +288,9 @@ def process_serial_data(uart_string: str):
         error_max_count = 0
         send_bin_data()
 
+    elif uart_string == "erase":
+        print("[INFO] 单片机正在擦除flash")
+
     elif uart_string == "finish":
         print("[INFO] 单片机已接收完整个bin文件")
         for task in asyncio.all_tasks():
@@ -318,15 +313,16 @@ def process_serial_data(uart_string: str):
 
 
 def send_bin_data(is_next: bool = True):
-    global send_bin_file, bin_send_offset
+    global send_bin_file, bin_send_offset, last_send_len
     if not is_next:
         pos = send_bin_file.tell()
-        target_pos = max(0, pos - DataPacket.MAX_PAYLOAD)
+        target_pos = max(0, pos - last_send_len)
         send_bin_file.seek(target_pos)
         bin_send_offset = target_pos
 
     bin_data = send_bin_file.read(DataPacket.MAX_PAYLOAD)
     bin_send_offset += len(bin_data)
+    last_send_len = len(bin_data)
     print(f"[INFO] bin_send_offset = {bin_send_offset}")
     if len(bin_data) == 0:
         print("[INFO] bin 文件发送完成")
@@ -334,6 +330,7 @@ def send_bin_data(is_next: bool = True):
 
     packet_bytes = DataPacket.make(header=0xA1, payload=bin_data)
     ser.write(packet_bytes)
+    ser.flush()
 
 
 def send_bin_info():
@@ -346,6 +343,7 @@ def send_bin_info():
     file_content = f"name:{file_name}size:{file_size}"
     packet_bytes = DataPacket.make(header=0xA0, payload=file_content.encode("utf-8"))
     ser.write(packet_bytes)
+    ser.flush()
 
 
 """
@@ -440,9 +438,7 @@ if __name__ == "__main__":
 
     asyncio.run(main_while(time_out=int(timeout)))
 
-    # 单片机定时器还没做
-    # 运行之后应该先显示终端，显示信息来继续操作
-    # 发送文件信息最好也分离出来，现在放在合并文件的函数中了 ✔
-    # 还有打包exe，打包成一个exe是使用-F参数 ✔
-    # 还有一个问题，不存在config文件和不存在uart_trans_file最好一次生成，目前的代码要两次才能生成  ✔
-    # 需要换一个py文件，这个文件别动了  ✔
+
+#     📦 给 DATA 包增加 offset 字段
+
+#     🧠 MCU 返回期望 offset，而不是 try_again

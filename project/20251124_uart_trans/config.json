@@ -1,0 +1,7 @@
+{
+    "serial": {
+        "port": "COM16",
+        "baudrate": 115200,
+        "timeout": 5
+    }
+}
