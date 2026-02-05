@@ -66,7 +66,7 @@ FR309x-SDK-v0.2.4_20251121_uart_trans
    D:\document\my_github\串口下载工具\tool>uart_trans.exe -p com5 -b 115200 -t 3
    ```
 
-   在这里超时时间是指电脑超过N秒后未收到数据就会结束发送，具体会有说明手册
+   在这里超时时间是指电脑超过N秒后未收到数据就会结束发送，具体会有说明手册 [串口下载工具说明手册.pdf](document\串口下载工具说明手册.pdf) 
 
 ## 更新详情
 
@@ -79,5 +79,30 @@ FR309x-SDK-v0.2.4_20251121_uart_trans
 ## 存在问题
   1. 暂无
 
+## 测试命令行
+
+通过ffmpeg将mp3音频转为sbc音频
+
+> [!tip]
+>
+> 通过ffmpeg将mp3音频转为sbc音频。sbc音频换后缀就是bin文件
+>
+> ```
+> ffmpeg -i 1.mp3 \
+>   -ar 16000 \
+>   -ac 1 \
+>   -sample_fmt s16 \
+>   -acodec sbc \
+>   -b:a 48k \
+>   11_low.sbc
+> ```
 
 
+
+> [!tip]
+>
+> 将sbc文件转为c文件数组
+>
+> ```
+> xxd -i 11.sbc > sbc_data.c
+> ```
