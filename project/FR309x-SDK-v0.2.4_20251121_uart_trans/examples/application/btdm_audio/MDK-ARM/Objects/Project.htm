@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Mon Nov 24 13:13:10 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Thu Feb  5 15:57:15 2026
 <BR><P>
 <H3>Maximum Stack Usage =       2176 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1934,9 +1934,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[304]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpStartServiceQuery
 <LI><a href="#[306]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsNodeOnList
-<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 <LI><a href="#[312]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AVDEV_DiscoverStreamEndpoints
+<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 </UL>
 <BR>[Address Reference Count : 3]<UL><LI> a2dp.o(.text.A2DP_OpenStream)
 <LI> a2dp_sdp.o(.text.A2dpSdpEventHandler)
@@ -1991,8 +1991,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[315]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_RemoveHeadList
 <LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_InsertTailList
 </UL>
-<BR>[Called By]<UL><LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
-<LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpStreamClose
+<BR>[Called By]<UL><LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpStreamClose
+<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 </UL>
 
 <P><STRONG><a name="[324]"></a>A2dpOpenStreamRsp</STRONG> (Thumb, 48 bytes, Stack size 24 bytes, a2dp.o(.text.A2dpOpenStreamRsp))
@@ -2046,8 +2046,8 @@ Global Symbols
 <LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AVDEV_DecrementUseCount
 <LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpFreeStreamInfo
 </UL>
-<BR>[Called By]<UL><LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
-<LI><a href="#[31f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpClose
+<BR>[Called By]<UL><LI><a href="#[31f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpClose
+<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 </UL>
 
 <P><STRONG><a name="[311]"></a>A2dpStreamSendSbcPacket</STRONG> (Thumb, 236 bytes, Stack size 32 bytes, a2dp.o(.text.A2dpStreamSendSbcPacket))
@@ -3543,8 +3543,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[44e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AvrcpHandlePanelTimeout
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> avrcppnl.o(.text.AvrcpPanelIntTimerExpired)
-<LI> avrcpact.o(.text.AvrcpInitAdvController)
+<BR>[Address Reference Count : 2]<UL><LI> avrcpact.o(.text.AvrcpInitAdvController)
+<LI> avrcppnl.o(.text.AvrcpPanelIntTimerExpired)
 </UL>
 <P><STRONG><a name="[373]"></a>AvtpMsgInit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, avctpmsg.o(.text.AvtpMsgInit))
 <BR><BR>[Calls]<UL><LI><a href="#[45b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AvctpInitConn
@@ -4069,7 +4069,6 @@ Global Symbols
 <LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_6
 <LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
 <LI><a href="#[4b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HciProcessEvent
-<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[72d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RfControlChannel
 <LI><a href="#[740]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RfMuxStateOpen
 <LI><a href="#[72b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RfCommandSent
@@ -4077,6 +4076,7 @@ Global Symbols
 <LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AtParseResultCode
 <LI><a href="#[3c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AVTP_DeinitChannel
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpStreamClose
+<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[76b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SdpStopQueryTimer
 <LI><a href="#[656]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 <LI><a href="#[67e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_15
@@ -5194,7 +5194,6 @@ Global Symbols
 <LI><a href="#[4f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
 <LI><a href="#[4ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 <LI><a href="#[4c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
-<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDP_Query
 <LI><a href="#[74e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SdpUpdateServiceDatabaseState
 <LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDP_RemoveRecord
@@ -5215,6 +5214,7 @@ Global Symbols
 <LI><a href="#[527]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HfRemoveCommand
 <LI><a href="#[526]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HfCompleteCommand
 <LI><a href="#[3d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AtSendCommand
+<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[4c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RXBUFF_Free
 </UL>
 
@@ -5289,7 +5289,6 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2DP_StreamSendSbcPacket
 <LI><a href="#[39f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AVTP_SendStart
 <LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpStreamSendSbcPacket
-<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[77d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SdpServHandleServiceSearchAttribReq
 <LI><a href="#[775]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SdpServHandleAttribReq
 <LI><a href="#[68e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
@@ -5298,6 +5297,7 @@ Global Symbols
 <LI><a href="#[73c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RfMuxStateMachine
 <LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AvtpSendPacket
+<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[754]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartNextQuery
 </UL>
 
@@ -6422,9 +6422,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEtoHost16
 <LI><a href="#[5d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_4
 </UL>
-<BR>[Address Reference Count : 6]<UL><LI> me.o(.text.HandleWriteDefLinkPolicyOp)
+<BR>[Address Reference Count : 6]<UL><LI> mesco.o(.text.ScoHandleVoiceSettingsOp)
+<LI> me.o(.text.HandleWriteDefLinkPolicyOp)
 <LI> me.o(.text.HandleChannelClass)
-<LI> mesco.o(.text.ScoHandleVoiceSettingsOp)
 <LI> mecon.o(.text.MeHandleWriteLinkPolicyOp)
 <LI> mecon.o(.text.MeHandleCancelRemNameOp)
 <LI> mesec.o(.text.SecHandleSetSmpDbgModeOp)
@@ -6459,13 +6459,13 @@ Global Symbols
 <BR>[Address Reference Count : 14]<UL><LI> me.o(.text.HandleInquiryOp)
 <LI> mecon.o(.text.MeHandleSniffModeOp)
 <LI> mecon.o(.text.MeHandleParkModeOp)
-<LI> mecon.o(.text.MeHandleSwitchRoleOp)
-<LI> mecon.o(.text.MeChangeConnPacketTypeOp)
-<LI> mecon.o(.text.MeHandleReadRemExtFeaturesOp)
 <LI> mesec.o(.text.SecHandleEncryptOp)
 <LI> mecon.o(.text.StartLinkRejectTask)
 <LI> mecon.o(.text.MeHandleLinkDisconnectOp)
 <LI> mecon.o(.text.MeHandleRemNameReqOp)
+<LI> mecon.o(.text.MeHandleSwitchRoleOp)
+<LI> mecon.o(.text.MeChangeConnPacketTypeOp)
+<LI> mecon.o(.text.MeHandleReadRemExtFeaturesOp)
 <LI> mesco.o(.text.ScoChangeConnPacketTypeOp)
 <LI> mesco.o(.text.ScoHandleLinkSetupOp)
 <LI> mesco.o(.text.ScoHandleLinkDisconnectOp)
@@ -7285,7 +7285,6 @@ Global Symbols
 <LI><a href="#[558]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2Cap_ProcessReq
 <LI><a href="#[553]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L2CAP_HciReceive
 <LI><a href="#[4ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Process
-<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[457]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDP_ParseAttributes
 <LI><a href="#[753]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SdpUuidCmp
 <LI><a href="#[77a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SdpStoreAttribData
@@ -7327,6 +7326,7 @@ Global Symbols
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AvdtpSigMgrSignalCallback
 <LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AvdtpSigEncodeCapabilities
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpStreamClose
+<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[342]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[33c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AT_TEncode_Handsfree
@@ -9789,7 +9789,6 @@ Global Symbols
 <LI><a href="#[4bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Init
 <LI><a href="#[4ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ME_Init
 <LI><a href="#[4ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Process
-<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpFindNextStreamInfo
 <LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDP_Query
 <LI><a href="#[74e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SdpUpdateServiceDatabaseState
@@ -9820,6 +9819,7 @@ Global Symbols
 <LI><a href="#[3f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AvdtpInsertStreamList
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpStreamClose
 <LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpFreeStreamInfo
+<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[51a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HciPacketSent
 <LI><a href="#[518]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HciBufferInd
 <LI><a href="#[4c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HciProcessSentPackets
@@ -9849,7 +9849,6 @@ Global Symbols
 <LI><a href="#[4b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Deinit
 <LI><a href="#[4ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Me_StartOperation
 <LI><a href="#[4ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HCI_Process
-<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpFindNextStreamInfo
 <LI><a href="#[71b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RfFreeDLC
 <LI><a href="#[72b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RfCommandSent
@@ -9865,6 +9864,7 @@ Global Symbols
 <LI><a href="#[3d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HfStartNextQueuedCmd
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AvdtpSigMgrSignalCallback
 <LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpFreeStreamInfo
+<LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A2dpAvdtpCallback
 <LI><a href="#[724]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RXBUFF_Alloc
 <LI><a href="#[754]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartNextQuery
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RfTimeoutHandler
@@ -14776,8 +14776,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = gapc_svc_setup &rArr; gatt_db_svc16_add &rArr; gatt_db_svc_create &rArr; gatt_db_updated &rArr; gapc_svc_db_updated &rArr; gatt_srv_event_mtp_cancel &rArr; gatt_proc_continue &rArr; gapc_sdt_stop &rArr; gapc_sdt_timer_prog &rArr; co_time_timer_set &rArr; co_time_timer_prog &rArr; co_time_sys_timer_update &rArr; btdm_timer_start &rArr; xTimerGenericCommand &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_user_srv_register
-<LI><a href="#[9b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_bearer_setup
 <LI><a href="#[9b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_db_svc16_add
+<LI><a href="#[9b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_bearer_setup
 <LI><a href="#[691]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_op_setup_continue
@@ -15663,13 +15663,13 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[62b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_pop_front
 <LI><a href="#[68b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_buf_release
 <LI><a href="#[626]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_buf_alloc
-<LI><a href="#[951]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_cli_event_svc_chg
 <LI><a href="#[a13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_bearer_pdu_send
 <LI><a href="#[986]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_sdt_defer
 <LI><a href="#[615]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_proc_pick
 <LI><a href="#[a17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_proc_handler_create
 <LI><a href="#[a04]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_proc_continue
 <LI><a href="#[a0c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_proc_check_grant
+<LI><a href="#[951]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_cli_event_svc_chg
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gapc_sdt.o(.rodata.gapc_sdt_handlers)
 </UL>
@@ -17054,8 +17054,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[661]"></a>gatt_user_get</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, gatt_user.o(.text.gatt_user_get))
-<BR><BR>[Called By]<UL><LI><a href="#[951]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_cli_event_svc_chg
-<LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_srv_att_val_set_cb
+<BR><BR>[Called By]<UL><LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_srv_att_val_set_cb
 <LI><a href="#[25f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_srv_att_info_get_cb
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_srv_write_proc_continue
 <LI><a href="#[153]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_srv_write_exe_proc_continue
@@ -17069,6 +17068,7 @@ Global Symbols
 <LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_cli_att_val_evt_cb
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_cli_event_proc_continue
 <LI><a href="#[a0c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_proc_check_grant
+<LI><a href="#[951]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_cli_event_svc_chg
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_srv_discover_proc_continue
 <LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_srv_event_sent_cb
 <LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_srv_att_event_get_cb
@@ -20168,7 +20168,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_profile_task_add_cmd_handler
 </UL>
 
-<P><STRONG><a name="[83c]"></a>py_uart_receive</STRONG> (Thumb, 752 bytes, Stack size 80 bytes, py_uart_trans.o(.text.py_uart_receive))
+<P><STRONG><a name="[83c]"></a>py_uart_receive</STRONG> (Thumb, 888 bytes, Stack size 80 bytes, py_uart_trans.o(.text.py_uart_receive))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = py_uart_receive &rArr; xTimerGenericCommand &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ascii_strn2val
@@ -22762,7 +22762,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> app_rpmsg.o(.text.app_rpmsg_init)
 </UL>
-<P><STRONG><a name="[103]"></a>app_task</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, app_task.o(.text.app_task))
+<P><STRONG><a name="[103]"></a>app_task</STRONG> (Thumb, 112 bytes, Stack size 0 bytes, app_task.o(.text.app_task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1944<LI>Call Chain = app_task &rArr; app_at_cmd_recv_handler &rArr; bt_dial_number &rArr; HF_DialNumber &rArr; OUTLINED_FUNCTION_8 &rArr; HfAddCommand &rArr; HfExecuteNextCommand &rArr; AtSendCommand &rArr; HfAtSendRfPacket &rArr; RF_SendData &rArr; RfMUXCheckTxQueues &rArr; RfMUXCheckNextTxQueue &rArr; RfSendDataInternal &rArr; L2CAP_SendData &rArr; L2Cap_Send &rArr; L2Cap_QueueTxPacket &rArr; MeHandleDataReqWhileNotActive &rArr; MeReportResults &rArr; MeDevEventHandler &rArr; DS_AddDevice &rArr; SEC_FindDeviceRecord &rArr; DDB_FindRecord &rArr; flashdb_set &rArr; fdb_kv_set_blob &rArr; create_kv_blob &rArr; gc_collect &rArr; move_kv &rArr; del_kv &rArr; find_kv &rArr; find_kv_no_cache &rArr; read_kv &rArr; _fdb_write_status &rArr; fal_partition_write &rArr; puts &rArr; fputc &rArr; uart_transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[499]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree (via Veneer)
@@ -22780,7 +22780,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> app_task.o(.text.app_task_init)
 </UL>
-<P><STRONG><a name="[182]"></a>app_py_rx_done</STRONG> (Thumb, 170 bytes, Stack size 24 bytes, py_uart_trans.o(.text.app_py_rx_done))
+<P><STRONG><a name="[182]"></a>app_py_rx_done</STRONG> (Thumb, 176 bytes, Stack size 24 bytes, py_uart_trans.o(.text.app_py_rx_done))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = app_py_rx_done &rArr; app_task_event_alloc &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_receive_IT
@@ -30051,14 +30051,14 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[966]"></a>OUTLINED_FUNCTION_1</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, app_task.o(.text.OUTLINED_FUNCTION_1))
-<BR><BR>[Called By]<UL><LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_peer_version_ind_handler
-<LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_peer_features_ind_handler
-<LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_le_phy_ind_handler
+<BR><BR>[Called By]<UL><LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_le_phy_ind_handler
 <LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_con_rssi_ind_handler
 <LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_cmp_evt_handler
 <LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_mtu_updated_ind_handler
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_per_sync_established_ind_handler
 <LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_le_pkt_size_ind_handler
+<LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_peer_version_ind_handler
+<LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_peer_features_ind_handler
 </UL>
 
 <P><STRONG><a name="[697]"></a>OUTLINED_FUNCTION_2</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, app_task.o(.text.OUTLINED_FUNCTION_2))
@@ -30070,8 +30070,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[978]"></a>OUTLINED_FUNCTION_3</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, app_task.o(.text.OUTLINED_FUNCTION_3))
-<BR><BR>[Called By]<UL><LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_peer_version_ind_handler
-<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_le_pkt_size_ind_handler
+<BR><BR>[Called By]<UL><LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_le_pkt_size_ind_handler
+<LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_peer_version_ind_handler
 </UL>
 
 <P><STRONG><a name="[823]"></a>app_get_handler</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, app_task.o(.text.app_get_handler))

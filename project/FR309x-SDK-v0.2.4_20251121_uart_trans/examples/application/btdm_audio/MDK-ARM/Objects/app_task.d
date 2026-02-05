@@ -78,6 +78,11 @@
   ..\..\..\..\components\drivers\device\fr30xx\trim_fr30xx.h \
   ..\Src\app_task.h \
   ..\..\..\..\components\modules\common\include\co_list.h \
+  ..\Src\py_uart_trans.h \
+  ..\..\..\..\components\drivers\peripheral\Inc\driver_gpio.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\timers.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\task.h \
+  ..\..\..\..\components\modules\common\include\co_util.h \
   ..\Src\app_bt.h ..\Src\app_btdm.h \
   ..\..\..\..\components\btdm\include\hf_api.h \
   ..\..\..\..\components\btdm\include\btconfig.h \

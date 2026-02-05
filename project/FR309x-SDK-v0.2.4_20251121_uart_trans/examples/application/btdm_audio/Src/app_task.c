@@ -60,7 +60,7 @@ static void app_task_event_handler(void)
             app_audio_event_handler(event);
             break;
         case APP_TASK_EVENT_PY_TRANS:
-            py_uart_receive((event->param));
+            py_uart_receive();
             break;
         default:
             break;

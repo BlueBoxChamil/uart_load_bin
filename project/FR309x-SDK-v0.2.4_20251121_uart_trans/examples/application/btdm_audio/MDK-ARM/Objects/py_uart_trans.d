@@ -79,4 +79,5 @@
   ..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h \
   ..\..\..\..\components\modules\FreeRTOS\include\timers.h \
   ..\..\..\..\components\modules\FreeRTOS\include\task.h \
-  ..\..\..\..\components\modules\FreeRTOS\include\list.h
+  ..\..\..\..\components\modules\FreeRTOS\include\list.h \
+  ..\..\..\..\components\modules\common\include\co_util.h

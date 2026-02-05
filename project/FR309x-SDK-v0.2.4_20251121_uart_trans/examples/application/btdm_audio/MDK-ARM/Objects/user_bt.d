@@ -94,7 +94,9 @@
   ..\..\..\..\components\drivers\device\fr30xx\fr30xx.h \
   ..\..\..\..\components\drivers\device\fr30xx\trim_fr30xx.h \
   C:\Software\Keil_v5\ARM\ARMCLANG\Bin\..\include\assert.h \
-  ..\Src\app_task.h \
+  ..\Src\app_task.h ..\Src\py_uart_trans.h \
+  ..\..\..\..\components\drivers\peripheral\Inc\driver_gpio.h \
+  ..\..\..\..\components\drivers\peripheral\Inc\driver_uart.h \
   ..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h \
   ..\Inc\FreeRTOSConfig.h ..\Inc\app_config.h \
   ..\..\..\..\components\modules\FreeRTOS\include\projdefs.h \
@@ -105,6 +107,7 @@
   ..\..\..\..\components\modules\FreeRTOS\include\timers.h \
   ..\..\..\..\components\modules\FreeRTOS\include\task.h \
   ..\..\..\..\components\modules\FreeRTOS\include\list.h \
+  ..\..\..\..\components\modules\common\include\co_util.h \
   ..\..\..\common\btdm\btdm_mem.h ..\Src\app_audio.h \
   ..\..\..\..\components\modules\audio\audio_common.h \
   ..\..\..\..\components\modules\audio\audio_scene.h \

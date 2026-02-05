@@ -91,4 +91,10 @@
   ..\..\..\..\components\modules\dsp\dsp.h ..\Inc\app_config.h \
   ..\Src\app_task.h \
   ..\..\..\..\components\modules\common\include\co_list.h \
+  ..\Src\py_uart_trans.h \
+  ..\..\..\..\components\drivers\peripheral\Inc\driver_gpio.h \
+  ..\..\..\..\components\drivers\peripheral\Inc\driver_uart.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\timers.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\task.h \
+  ..\..\..\..\components\modules\common\include\co_util.h \
   ..\Src\app_rpmsg.h

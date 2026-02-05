@@ -1,16 +1,21 @@
 #include "py_uart_trans.h"
 
+/*
+ * =================================================================================
+ * STATIC VARIABLES (Private)
+ * =================================================================================
+ */
 UART_HandleTypeDef Uart2_handle;
 static uint8_t app_py_recv_char;
 static uint16_t py_uart_recv_len = 0;
 static py_uart_t py_uart;
 static uint8_t py_uart_buf[MAX_PY_UART_BUF_SIZE];
-const char file_name_str[10] = "name:";
-const char file_size_str[10] = "size:";
+static const char file_name_str[10] = "name:";
+static const char file_size_str[10] = "size:";
 static uint32_t py_now_write_offset = 0;
 static TimerHandle_t py_timeout_timer;
 
-static const crc32_table[] =
+static const uint32_t crc32_table[] =
     {
         0x00000000, 0x77073096, 0xee0e612c, 0x990951ba, 0x076dc419, 0x706af48f,
         0xe963a535, 0x9e6495a3, 0x0edb8832, 0x79dcb8a4, 0xe0d5e91e, 0x97d2d988,
@@ -56,9 +61,32 @@ static const crc32_table[] =
         0x54de5729, 0x23d967bf, 0xb3667a2e, 0xc4614ab8, 0x5d681b02, 0x2a6f2b94,
         0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d};
 
+/*
+ * =================================================================================
+ * STATIC FUNCTION PROTOTYPES (Private)
+ * =================================================================================
+ */
+static void py_uart_send(char *str);
+static void py_uart_flash_write(uint8_t *data, uint16_t len, uint32_t offset);
+static void py_uart_flash_read(uint8_t *data, uint16_t len, uint32_t offset);
+static void py_uart_flash_erase(uint32_t addr);
+static uint32_t py_uart_crc32(py_uart_t *ptr);
+static uint32_t crc32_compute(const uint8_t *buf, size_t len, uint32_t crc);
+static void app_py_recv_c(uint8_t c);
+static void app_py_rx_done(struct __UART_HandleTypeDef *handle);
+static void app_py_init(struct __UART_HandleTypeDef *handle);
+static void py_timeout_timer_func();
+UART_HandleTypeDef *uart2Handler();
+
+/*
+ * =================================================================================
+ * PUBLIC API IMPLEMENTATION
+ * =================================================================================
+ */
+
 /**
  * @brief 下载串口初始化
- * 
+ *
  */
 void py_uart_trans_init(void)
 {
@@ -90,7 +118,7 @@ void py_uart_trans_init(void)
     printf("Initialize PD0 and PD1 as the UART downloading py dictionary\r\n");
 
     app_py_init(&Uart2_handle);
-    py_timeout_timer = xTimerCreate("py_timeout_timer", pdMS_TO_TICKS(1000*3), pdFALSE, NULL, py_timeout_timer_func);
+    py_timeout_timer = xTimerCreate("py_timeout_timer", pdMS_TO_TICKS(1000 * 5), pdFALSE, NULL, py_timeout_timer_func);
 
     py_uart.type = 0xA0;
     py_uart.pack_id = 0;
@@ -104,12 +132,13 @@ void py_uart_trans_init(void)
 
 /**
  * @brief 处理接收到的一帧串口数据
- * 
- * @param ptr 
+ *
+ * @param ptr
  */
-void py_uart_receive(py_uart_t *ptr)
+void py_uart_receive(void)
 {
     xTimerStart(py_timeout_timer, 0);
+    py_uart_t *ptr;
     ptr = &py_uart;
     // printf("ptr->type = %02x\r\n", ptr->type);
     // printf("ptr->pack_id = %d\r\n", ptr->pack_id);
@@ -149,7 +178,19 @@ void py_uart_receive(py_uart_t *ptr)
     case 0xA0:
     {
         char *p1 = strstr((char *)ptr->data, file_name_str);
+        if (!p1)
+        {
+            py_uart_send("format_error");
+            return;
+        }
+
         char *p2 = strstr((char *)(ptr->data + strlen(p1) + 1), file_size_str);
+        if (!p2)
+        {
+            py_uart_send("format_error");
+            return;
+        }
+
         // printf("p1 = %s\r\n", p1);
         // printf("p2 = %s\r\n", p2);
 
@@ -159,12 +200,19 @@ void py_uart_receive(py_uart_t *ptr)
 
         // 获取串口文件大小（数字）
         uint8_t size_len = strlen(p2) - strlen(file_size_str);
-        uint8_t tem_str[16];
+        char tem_str[16];
         memcpy(tem_str, p2 + strlen(file_size_str), size_len + 1);
         ptr->file_size = ascii_strn2val(tem_str, 10, size_len);
 
         printf("Received file name: %s\r\n", ptr->file_name);
         printf("Received file size: %d bytes\r\n", ptr->file_size);
+
+        uint32_t erase_count = (ptr->file_size + PY_FLASH_SECTOR - 1) / PY_FLASH_SECTOR;
+        for (uint32_t addr = 0; addr < erase_count; addr++)
+        {
+            py_uart_flash_erase(addr * PY_FLASH_SECTOR);
+            py_uart_send("erase");
+        }
 
         py_uart_send("ready");
     }
@@ -173,17 +221,17 @@ void py_uart_receive(py_uart_t *ptr)
     // 处理数据
     case 0xA1:
     {
-        uint8_t load_count = ptr->len / 256;
-        uint8_t load_remain = ptr->len % 256;
+        uint8_t load_count = ptr->len / PY_FLASH_PAGE;
+        uint8_t load_remain = ptr->len % PY_FLASH_PAGE;
         for (uint8_t i = 0; i < load_count; i++)
         {
-            py_uart_flash_write(&(ptr->data[i * 256]), 256, py_now_write_offset);
-            py_now_write_offset += 256;
+            py_uart_flash_write(&(ptr->data[i * PY_FLASH_PAGE]), PY_FLASH_PAGE, py_now_write_offset);
+            py_now_write_offset += PY_FLASH_PAGE;
         }
 
         if (load_remain > 0)
         {
-            py_uart_flash_write(&(ptr->data[load_count * 256]), load_remain, py_now_write_offset);
+            py_uart_flash_write(&(ptr->data[load_count * PY_FLASH_PAGE]), load_remain, py_now_write_offset);
             py_now_write_offset += load_remain;
         }
         printf("Current write offset: %d\r\n", py_now_write_offset);
@@ -197,6 +245,7 @@ void py_uart_receive(py_uart_t *ptr)
             py_uart_send("finish");
             py_now_write_offset = 0;
             xTimerStop(py_timeout_timer, 0);
+            printf("All the data has been fully received\r\n");
         }
     }
     break;
@@ -206,16 +255,21 @@ void py_uart_receive(py_uart_t *ptr)
     }
 }
 
+/*
+ * =================================================================================
+ * PRIVATE FUNCTION IMPLEMENTATION
+ * =================================================================================
+ */
+
 static void py_timeout_timer_func()
 {
     printf("Timeout No data received, exit");
-   
+
     py_uart_recv_len = 0;
     py_now_write_offset = 0;
 
     py_uart_send("time_out");
 }
-
 
 static void py_uart_flash_write(uint8_t *data, uint16_t len, uint32_t offset)
 {
@@ -227,6 +281,12 @@ static void py_uart_flash_read(uint8_t *data, uint16_t len, uint32_t offset)
 {
     // 读取flash
     system_delay_us(1000); // 模拟读取
+}
+
+static void py_uart_flash_erase(uint32_t addr)
+{
+    // 扇擦除flash
+    system_delay_us(1000); // 模拟擦除
 }
 
 /**
@@ -247,13 +307,13 @@ static uint32_t py_uart_crc32(py_uart_t *ptr)
 {
     uint32_t crc = 0xFFFFFFFF; // 初始值为全 1
 
-    crc = crc32_compute(ptr, 2, crc);
+    uint8_t header[4] = {
+        ptr->type,
+        ptr->pack_id,
+        (uint8_t)(ptr->len >> 8),
+        (uint8_t)(ptr->len)};
 
-    uint8_t len_bytes[2];
-    len_bytes[0] = (uint8_t)((ptr->len >> 8) & 0xFF);
-    len_bytes[1] = (uint8_t)((ptr->len >> 0) & 0xFF);
-    crc = crc32_compute(len_bytes, 2, crc);
-
+    crc = crc32_compute(header, sizeof(header), crc);
     crc = crc32_compute(ptr->data, ptr->len, crc);
     return crc ^ 0xFFFFFFFF; // 最终结果取反
 }
@@ -271,13 +331,15 @@ static uint32_t crc32_compute(const uint8_t *buf, size_t len, uint32_t crc)
 
 static void app_py_recv_c(uint8_t c)
 {
-    // printf("get uart4 = %x,LEN = %d\r\n", c, py_uart_recv_len);
+    // printf("get uart = %02x, len = %d\r\n", c, py_uart_recv_len);
     py_uart_recv_len++;
 
     // 获取帧头
     if (py_uart_recv_len == 1)
     {
         py_uart.type = c;
+        py_uart.len = 0;
+        py_uart.crc = 0;
     }
     // 获取数据长度
     else if (py_uart_recv_len == 2)

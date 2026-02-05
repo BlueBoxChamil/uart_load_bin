@@ -87,9 +87,13 @@
   ..\..\..\..\components\modules\fatfs\source\ff.h \
   ..\..\..\..\components\modules\fatfs\source\ffconf.h ..\Src\app_task.h \
   ..\..\..\..\components\modules\common\include\co_list.h \
-  ..\Src\app_at.h \
+  ..\Src\py_uart_trans.h \
+  ..\..\..\..\components\drivers\peripheral\Inc\driver_gpio.h \
   ..\..\..\..\components\drivers\peripheral\Inc\driver_uart.h \
-  ..\..\..\..\components\modules\audio\audio_scene.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\timers.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\task.h \
+  ..\..\..\..\components\modules\common\include\co_util.h \
+  ..\Src\app_at.h ..\..\..\..\components\modules\audio\audio_scene.h \
   ..\..\..\..\components\modules\audio\audio_common.h \
   ..\..\..\..\components\modules\audio\audio_hw.h \
   ..\..\..\..\components\modules\audio\audio_decoder.h \

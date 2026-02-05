@@ -88,8 +88,11 @@ I (..\..\..\..\components\btdm\include\config.h)(0x687F3A07)
 I (..\..\..\..\components\btdm\include\overide.h)(0x687F3A07)
 I (..\..\..\..\components\modules\fatfs\source\ff.h)(0x687F3A07)
 I (..\..\..\..\components\modules\fatfs\source\ffconf.h)(0x687F3A07)
-I (..\Src\app_task.h)(0x691FDF6B)
+I (..\Src\app_task.h)(0x6984400C)
 I (..\..\..\..\components\modules\common\include\co_list.h)(0x687F3A07)
+I (..\Src\py_uart_trans.h)(0x69844CB3)
+I (..\..\..\..\components\modules\FreeRTOS\include\timers.h)(0x687F3A07)
+I (..\..\..\..\components\modules\common\include\co_util.h)(0x687F3A07)
 I (..\Src\app_at.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\audio_scene.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\audio_common.h)(0x687F3A07)
@@ -105,7 +108,7 @@ I (..\Inc\app_config.h)(0x687F3A07)
 I (..\Src\app_audio.h)(0x687F3A07)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035A4A8)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x6035A4A8)
-I (..\Src\app_task.h)(0x691FDF6B)
+I (..\Src\app_task.h)(0x6984400C)
 I (..\..\..\..\components\modules\common\include\co_list.h)(0x687F3A07)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035A4A8)
 I (..\..\..\..\components\drivers\device\fr30xx\fr30xx.h)(0x691FD629)
@@ -171,8 +174,7 @@ I (..\..\..\..\components\drivers\peripheral\Inc\usb_mass_storage.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\peripheral\Inc\usb_wireless.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\system_fr30xx.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\trim_fr30xx.h)(0x687F3A07)
-I (..\..\..\..\components\modules\audio\audio_common.h)(0x687F3A07)
-I (..\..\..\..\components\modules\audio\audio_scene.h)(0x687F3A07)
+I (..\Src\py_uart_trans.h)(0x69844CB3)
 I (..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h)(0x687F3A07)
 I (..\Inc\FreeRTOSConfig.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\projdefs.h)(0x687F3A07)
@@ -180,8 +182,12 @@ I (..\..\..\..\components\modules\FreeRTOS\include\portable.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\deprecated_definitions.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\portable\ARMv8M\non_secure\portable\GCC\ARM_CM33_NTZ\portmacro.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\timers.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\task.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\list.h)(0x687F3A07)
+I (..\..\..\..\components\modules\common\include\co_util.h)(0x687F3A07)
+I (..\..\..\..\components\modules\audio\audio_common.h)(0x687F3A07)
+I (..\..\..\..\components\modules\audio\audio_scene.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\audio_hw.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\audio_decoder.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\codec\codec.h)(0x687F3A07)
@@ -334,7 +340,7 @@ I (..\Src\app_hid_sdp.h)(0x687F3A07)
 I (..\..\..\..\components\modules\common\include\co_log.h)(0x687F3A07)
 F (..\Src\app_btdm.c)(0x687F3A07)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -mlittle-endian -gdwarf-3 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../../../../components/btdm/include -I ../../../../components/drivers/cmsis -I ../../../../components/drivers/device/fr30xx -I ../../../../components/drivers/peripheral/Inc -I ../../../../components/modules/audio -I ../../../../components/modules/audio/algorithm -I ../../../../components/modules/audio/codec -I ../../../../components/modules/audio/resample -I ../../../../components/modules/common/include -I ../../../../components/modules/dsp -I ../../../../components/modules/fatfs/source -I ../../../../components/modules/FlashDB/flashdb/inc -I ../../../../components/modules/FlashDB/port/fal/inc -I ../../../../components/modules/FreeRTOS/include -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33_NTZ -I ../../../../components/modules/heap -I ../../../../components/modules/rpmsg-lite/lib/include -I ../../../../components/modules/rpmsg-lite/lib/include/platform/fr30xx_m33 -I ../../../common/btdm -I ../../../common/flashdb -I ../Inc -I ../Src -I ../../../common/btdm/profile/ble_ANCS_AMCS -I ../../../common/btdm/profile/ble_hid -I ../../../common/btdm/profile/ble_simple_gatt -I ../../../../components/modules/crc -I ../../../../components/modules/ext_flash_program -I ../../../common/lwip_port -I ../../../common/lwip_port/arch-I./RTE/_Project-IC:/Software/Keil_v5/Arm/Packs/ARM/CMSIS/5.7.0/Device/ARM/ARMCM33/Include-D__UVISION_VERSION="534" -D_RTE_ -DARMCM33_DSP_FP -D_RTE_ -DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE-o ./objects/app_btdm.o -MD)
 I (..\Inc\app_config.h)(0x687F3A07)
-I (..\Src\app_task.h)(0x691FDF6B)
+I (..\Src\app_task.h)(0x6984400C)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035A4A8)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x6035A4A8)
 I (..\..\..\..\components\modules\common\include\co_list.h)(0x687F3A07)
@@ -402,6 +408,18 @@ I (..\..\..\..\components\drivers\peripheral\Inc\usb_mass_storage.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\peripheral\Inc\usb_wireless.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\system_fr30xx.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\trim_fr30xx.h)(0x687F3A07)
+I (..\Src\py_uart_trans.h)(0x69844CB3)
+I (..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h)(0x687F3A07)
+I (..\Inc\FreeRTOSConfig.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\projdefs.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\portable.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\deprecated_definitions.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\portable\ARMv8M\non_secure\portable\GCC\ARM_CM33_NTZ\portmacro.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\timers.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\task.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\list.h)(0x687F3A07)
+I (..\..\..\..\components\modules\common\include\co_util.h)(0x687F3A07)
 I (..\Src\app_btdm.h)(0x687F3A07)
 I (..\Src\app_ble.h)(0x687F3A07)
 I (..\..\..\..\components\btdm\include\gap_api.h)(0x687F3A07)
@@ -516,9 +534,21 @@ I (..\..\..\..\components\btdm\include\gatt_defines.h)(0x687F3A07)
 I (..\..\..\..\components\btdm\include\gatt_sig_uuid.h)(0x687F3A07)
 I (..\..\..\..\components\btdm\include\ble_api_error.h)(0x687F3A07)
 I (..\Src\app_at.h)(0x687F3A07)
-I (..\Src\app_task.h)(0x691FDF6B)
+I (..\Src\app_task.h)(0x6984400C)
 I (..\..\..\..\components\modules\common\include\co_list.h)(0x687F3A07)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035A4A8)
+I (..\Src\py_uart_trans.h)(0x69844CB3)
+I (..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h)(0x687F3A07)
+I (..\Inc\FreeRTOSConfig.h)(0x687F3A07)
+I (..\Inc\app_config.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\projdefs.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\portable.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\deprecated_definitions.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\portable\ARMv8M\non_secure\portable\GCC\ARM_CM33_NTZ\portmacro.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\timers.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\task.h)(0x687F3A07)
+I (..\..\..\..\components\modules\FreeRTOS\include\list.h)(0x687F3A07)
 I (..\Src\app_ble.h)(0x687F3A07)
 I (..\..\..\..\components\btdm\include\gap_api.h)(0x687F3A07)
 I (..\..\..\..\components\btdm\include\gap_defines.h)(0x687F3A07)
@@ -538,16 +568,6 @@ I (..\..\..\..\components\btdm\include\map_api.h)(0x687F3A07)
 I (..\Src\app_audio.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\audio_common.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\audio_scene.h)(0x687F3A07)
-I (..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h)(0x687F3A07)
-I (..\Inc\FreeRTOSConfig.h)(0x687F3A07)
-I (..\Inc\app_config.h)(0x687F3A07)
-I (..\..\..\..\components\modules\FreeRTOS\include\projdefs.h)(0x687F3A07)
-I (..\..\..\..\components\modules\FreeRTOS\include\portable.h)(0x687F3A07)
-I (..\..\..\..\components\modules\FreeRTOS\include\deprecated_definitions.h)(0x687F3A07)
-I (..\..\..\..\components\modules\FreeRTOS\portable\ARMv8M\non_secure\portable\GCC\ARM_CM33_NTZ\portmacro.h)(0x687F3A07)
-I (..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h)(0x687F3A07)
-I (..\..\..\..\components\modules\FreeRTOS\include\task.h)(0x687F3A07)
-I (..\..\..\..\components\modules\FreeRTOS\include\list.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\audio_hw.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\audio_decoder.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\codec\codec.h)(0x687F3A07)
@@ -654,10 +674,13 @@ I (..\..\..\..\components\modules\rpmsg-lite\lib\include\rpmsg_compiler.h)(0x687
 I (..\..\..\..\components\modules\rpmsg-lite\lib\include\rpmsg_queue.h)(0x687F3A07)
 I (..\..\..\..\components\modules\rpmsg-lite\lib\include\rpmsg_ns.h)(0x687F3A07)
 I (..\..\..\..\components\modules\dsp\dsp.h)(0x687F3A07)
-I (..\Src\app_task.h)(0x691FDF6B)
+I (..\Src\app_task.h)(0x6984400C)
 I (..\..\..\..\components\modules\common\include\co_list.h)(0x687F3A07)
+I (..\Src\py_uart_trans.h)(0x69844CB3)
+I (..\..\..\..\components\modules\FreeRTOS\include\timers.h)(0x687F3A07)
+I (..\..\..\..\components\modules\common\include\co_util.h)(0x687F3A07)
 I (..\Src\app_rpmsg.h)(0x687F3A07)
-F (..\Src\app_task.c)(0x69200101)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -mlittle-endian -gdwarf-3 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../../../../components/btdm/include -I ../../../../components/drivers/cmsis -I ../../../../components/drivers/device/fr30xx -I ../../../../components/drivers/peripheral/Inc -I ../../../../components/modules/audio -I ../../../../components/modules/audio/algorithm -I ../../../../components/modules/audio/codec -I ../../../../components/modules/audio/resample -I ../../../../components/modules/common/include -I ../../../../components/modules/dsp -I ../../../../components/modules/fatfs/source -I ../../../../components/modules/FlashDB/flashdb/inc -I ../../../../components/modules/FlashDB/port/fal/inc -I ../../../../components/modules/FreeRTOS/include -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33_NTZ -I ../../../../components/modules/heap -I ../../../../components/modules/rpmsg-lite/lib/include -I ../../../../components/modules/rpmsg-lite/lib/include/platform/fr30xx_m33 -I ../../../common/btdm -I ../../../common/flashdb -I ../Inc -I ../Src -I ../../../common/btdm/profile/ble_ANCS_AMCS -I ../../../common/btdm/profile/ble_hid -I ../../../common/btdm/profile/ble_simple_gatt -I ../../../../components/modules/crc -I ../../../../components/modules/ext_flash_program -I ../../../common/lwip_port -I ../../../common/lwip_port/arch-I./RTE/_Project-IC:/Software/Keil_v5/Arm/Packs/ARM/CMSIS/5.7.0/Device/ARM/ARMCM33/Include-D__UVISION_VERSION="534" -D_RTE_ -DARMCM33_DSP_FP -D_RTE_ -DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE-o ./objects/app_task.o -MD)
+F (..\Src\app_task.c)(0x69844189)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -mlittle-endian -gdwarf-3 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../../../../components/btdm/include -I ../../../../components/drivers/cmsis -I ../../../../components/drivers/device/fr30xx -I ../../../../components/drivers/peripheral/Inc -I ../../../../components/modules/audio -I ../../../../components/modules/audio/algorithm -I ../../../../components/modules/audio/codec -I ../../../../components/modules/audio/resample -I ../../../../components/modules/common/include -I ../../../../components/modules/dsp -I ../../../../components/modules/fatfs/source -I ../../../../components/modules/FlashDB/flashdb/inc -I ../../../../components/modules/FlashDB/port/fal/inc -I ../../../../components/modules/FreeRTOS/include -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33_NTZ -I ../../../../components/modules/heap -I ../../../../components/modules/rpmsg-lite/lib/include -I ../../../../components/modules/rpmsg-lite/lib/include/platform/fr30xx_m33 -I ../../../common/btdm -I ../../../common/flashdb -I ../Inc -I ../Src -I ../../../common/btdm/profile/ble_ANCS_AMCS -I ../../../common/btdm/profile/ble_hid -I ../../../common/btdm/profile/ble_simple_gatt -I ../../../../components/modules/crc -I ../../../../components/modules/ext_flash_program -I ../../../common/lwip_port -I ../../../common/lwip_port/arch-I./RTE/_Project-IC:/Software/Keil_v5/Arm/Packs/ARM/CMSIS/5.7.0/Device/ARM/ARMCM33/Include-D__UVISION_VERSION="534" -D_RTE_ -DARMCM33_DSP_FP -D_RTE_ -DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE-o ./objects/app_task.o -MD)
 I (..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h)(0x687F3A07)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035A4A8)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035A4A8)
@@ -735,8 +758,11 @@ I (..\..\..\..\components\drivers\peripheral\Inc\usb_mass_storage.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\peripheral\Inc\usb_wireless.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\system_fr30xx.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\trim_fr30xx.h)(0x687F3A07)
-I (..\Src\app_task.h)(0x691FDF6B)
+I (..\Src\app_task.h)(0x6984400C)
 I (..\..\..\..\components\modules\common\include\co_list.h)(0x687F3A07)
+I (..\Src\py_uart_trans.h)(0x69844CB3)
+I (..\..\..\..\components\modules\FreeRTOS\include\timers.h)(0x687F3A07)
+I (..\..\..\..\components\modules\common\include\co_util.h)(0x687F3A07)
 I (..\Src\app_bt.h)(0x687F3A07)
 I (..\Src\app_btdm.h)(0x687F3A07)
 I (..\..\..\..\components\btdm\include\hf_api.h)(0x687F3A07)
@@ -940,7 +966,8 @@ I (..\..\..\..\components\drivers\peripheral\Inc\usb_wireless.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\system_fr30xx.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\trim_fr30xx.h)(0x687F3A07)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x6035A4A6)
-I (..\Src\app_task.h)(0x691FDF6B)
+I (..\Src\app_task.h)(0x6984400C)
+I (..\Src\py_uart_trans.h)(0x69844CB3)
 I (..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h)(0x687F3A07)
 I (..\Inc\FreeRTOSConfig.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\projdefs.h)(0x687F3A07)
@@ -951,6 +978,7 @@ I (..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\timers.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\task.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\list.h)(0x687F3A07)
+I (..\..\..\..\components\modules\common\include\co_util.h)(0x687F3A07)
 I (..\..\..\common\btdm\btdm_mem.h)(0x687F3A07)
 I (..\Src\app_audio.h)(0x687F3A07)
 I (..\..\..\..\components\modules\audio\audio_common.h)(0x687F3A07)
@@ -987,8 +1015,8 @@ I (..\..\..\..\components\btdm\include\me_api.h)(0x687F3A07)
 I (..\..\..\..\components\btdm\include\sec_api.h)(0x687F3A07)
 I (..\..\..\..\components\btdm\include\sdp_api.h)(0x687F3A07)
 I (..\..\..\common\btdm\btdm_mem.h)(0x687F3A07)
-F (..\Src\py_uart_trans.c)(0x6923E95F)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -mlittle-endian -gdwarf-3 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../../../../components/btdm/include -I ../../../../components/drivers/cmsis -I ../../../../components/drivers/device/fr30xx -I ../../../../components/drivers/peripheral/Inc -I ../../../../components/modules/audio -I ../../../../components/modules/audio/algorithm -I ../../../../components/modules/audio/codec -I ../../../../components/modules/audio/resample -I ../../../../components/modules/common/include -I ../../../../components/modules/dsp -I ../../../../components/modules/fatfs/source -I ../../../../components/modules/FlashDB/flashdb/inc -I ../../../../components/modules/FlashDB/port/fal/inc -I ../../../../components/modules/FreeRTOS/include -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33_NTZ -I ../../../../components/modules/heap -I ../../../../components/modules/rpmsg-lite/lib/include -I ../../../../components/modules/rpmsg-lite/lib/include/platform/fr30xx_m33 -I ../../../common/btdm -I ../../../common/flashdb -I ../Inc -I ../Src -I ../../../common/btdm/profile/ble_ANCS_AMCS -I ../../../common/btdm/profile/ble_hid -I ../../../common/btdm/profile/ble_simple_gatt -I ../../../../components/modules/crc -I ../../../../components/modules/ext_flash_program -I ../../../common/lwip_port -I ../../../common/lwip_port/arch-I./RTE/_Project-IC:/Software/Keil_v5/Arm/Packs/ARM/CMSIS/5.7.0/Device/ARM/ARMCM33/Include-D__UVISION_VERSION="534" -D_RTE_ -DARMCM33_DSP_FP -D_RTE_ -DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE-o ./objects/py_uart_trans.o -MD)
-I (..\Src\py_uart_trans.h)(0x6923E950)
+F (..\Src\py_uart_trans.c)(0x69844D4F)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -mlittle-endian -gdwarf-3 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../../../../components/btdm/include -I ../../../../components/drivers/cmsis -I ../../../../components/drivers/device/fr30xx -I ../../../../components/drivers/peripheral/Inc -I ../../../../components/modules/audio -I ../../../../components/modules/audio/algorithm -I ../../../../components/modules/audio/codec -I ../../../../components/modules/audio/resample -I ../../../../components/modules/common/include -I ../../../../components/modules/dsp -I ../../../../components/modules/fatfs/source -I ../../../../components/modules/FlashDB/flashdb/inc -I ../../../../components/modules/FlashDB/port/fal/inc -I ../../../../components/modules/FreeRTOS/include -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33_NTZ -I ../../../../components/modules/heap -I ../../../../components/modules/rpmsg-lite/lib/include -I ../../../../components/modules/rpmsg-lite/lib/include/platform/fr30xx_m33 -I ../../../common/btdm -I ../../../common/flashdb -I ../Inc -I ../Src -I ../../../common/btdm/profile/ble_ANCS_AMCS -I ../../../common/btdm/profile/ble_hid -I ../../../common/btdm/profile/ble_simple_gatt -I ../../../../components/modules/crc -I ../../../../components/modules/ext_flash_program -I ../../../common/lwip_port -I ../../../common/lwip_port/arch-I./RTE/_Project-IC:/Software/Keil_v5/Arm/Packs/ARM/CMSIS/5.7.0/Device/ARM/ARMCM33/Include-D__UVISION_VERSION="534" -D_RTE_ -DARMCM33_DSP_FP -D_RTE_ -DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE-o ./objects/py_uart_trans.o -MD)
+I (..\Src\py_uart_trans.h)(0x69844CB3)
 I (..\..\..\..\components\drivers\device\fr30xx\fr30xx.h)(0x691FD629)
 I (..\..\..\..\components\drivers\cmsis\core_cm33.h)(0x687F3A07)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035A4A8)
@@ -1054,7 +1082,7 @@ I (..\..\..\..\components\drivers\peripheral\Inc\usb_mass_storage.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\peripheral\Inc\usb_wireless.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\system_fr30xx.h)(0x687F3A07)
 I (..\..\..\..\components\drivers\device\fr30xx\trim_fr30xx.h)(0x687F3A07)
-I (..\Src\app_task.h)(0x691FDF6B)
+I (..\Src\app_task.h)(0x6984400C)
 I (..\..\..\..\components\modules\common\include\co_list.h)(0x687F3A07)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035A4A8)
 I (..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h)(0x687F3A07)
@@ -1068,6 +1096,7 @@ I (..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\timers.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\task.h)(0x687F3A07)
 I (..\..\..\..\components\modules\FreeRTOS\include\list.h)(0x687F3A07)
+I (..\..\..\..\components\modules\common\include\co_util.h)(0x687F3A07)
 F (..\..\..\common\btdm\profile\ble_ANCS_AMCS\ANCS_AMS_client.c)(0x687F3A07)(-xc -std=gnu11 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -mlittle-endian -gdwarf-3 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../../../../components/btdm/include -I ../../../../components/drivers/cmsis -I ../../../../components/drivers/device/fr30xx -I ../../../../components/drivers/peripheral/Inc -I ../../../../components/modules/audio -I ../../../../components/modules/audio/algorithm -I ../../../../components/modules/audio/codec -I ../../../../components/modules/audio/resample -I ../../../../components/modules/common/include -I ../../../../components/modules/dsp -I ../../../../components/modules/fatfs/source -I ../../../../components/modules/FlashDB/flashdb/inc -I ../../../../components/modules/FlashDB/port/fal/inc -I ../../../../components/modules/FreeRTOS/include -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure -I ../../../../components/modules/FreeRTOS/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33_NTZ -I ../../../../components/modules/heap -I ../../../../components/modules/rpmsg-lite/lib/include -I ../../../../components/modules/rpmsg-lite/lib/include/platform/fr30xx_m33 -I ../../../common/btdm -I ../../../common/flashdb -I ../Inc -I ../Src -I ../../../common/btdm/profile/ble_ANCS_AMCS -I ../../../common/btdm/profile/ble_hid -I ../../../common/btdm/profile/ble_simple_gatt -I ../../../../components/modules/crc -I ../../../../components/modules/ext_flash_program -I ../../../common/lwip_port -I ../../../common/lwip_port/arch-I./RTE/_Project-IC:/Software/Keil_v5/Arm/Packs/ARM/CMSIS/5.7.0/Device/ARM/ARMCM33/Include-D__UVISION_VERSION="534" -D_RTE_ -DARMCM33_DSP_FP -D_RTE_ -DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE-o ./objects/ancs_ams_client.o -MD)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6035A4A8)
 I (C:\Software\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6035A4A8)

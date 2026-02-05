@@ -70,8 +70,9 @@
   ..\..\..\..\components\drivers\device\fr30xx\system_fr30xx.h \
   ..\..\..\..\components\drivers\device\fr30xx\fr30xx.h \
   ..\..\..\..\components\drivers\device\fr30xx\trim_fr30xx.h \
-  ..\..\..\..\components\modules\audio\audio_common.h \
-  ..\..\..\..\components\modules\audio\audio_scene.h \
+  ..\Src\py_uart_trans.h \
+  ..\..\..\..\components\drivers\peripheral\Inc\driver_gpio.h \
+  ..\..\..\..\components\drivers\peripheral\Inc\driver_uart.h \
   ..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h \
   ..\Inc\FreeRTOSConfig.h ..\Inc\app_config.h \
   ..\..\..\..\components\modules\FreeRTOS\include\projdefs.h \
@@ -79,8 +80,13 @@
   ..\..\..\..\components\modules\FreeRTOS\include\deprecated_definitions.h \
   ..\..\..\..\components\modules\FreeRTOS\portable\ARMv8M\non_secure\portable\GCC\ARM_CM33_NTZ\portmacro.h \
   ..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\timers.h \
   ..\..\..\..\components\modules\FreeRTOS\include\task.h \
   ..\..\..\..\components\modules\FreeRTOS\include\list.h \
+  ..\..\..\..\components\modules\common\include\co_util.h \
+  ..\..\..\..\components\modules\audio\audio_common.h \
+  ..\..\..\..\components\modules\audio\audio_scene.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\task.h \
   ..\..\..\..\components\modules\audio\audio_common.h \
   ..\..\..\..\components\modules\audio\audio_hw.h \
   ..\..\..\..\components\modules\audio\audio_decoder.h \

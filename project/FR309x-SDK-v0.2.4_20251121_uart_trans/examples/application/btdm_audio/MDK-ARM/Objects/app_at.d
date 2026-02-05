@@ -87,6 +87,18 @@
   ..\Src\app_task.h \
   ..\..\..\..\components\modules\common\include\co_list.h \
   C:\Software\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  ..\Src\py_uart_trans.h \
+  ..\..\..\..\components\drivers\peripheral\Inc\driver_gpio.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h \
+  ..\Inc\FreeRTOSConfig.h ..\Inc\app_config.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\projdefs.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\portable.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\deprecated_definitions.h \
+  ..\..\..\..\components\modules\FreeRTOS\portable\ARMv8M\non_secure\portable\GCC\ARM_CM33_NTZ\portmacro.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\timers.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\task.h \
+  ..\..\..\..\components\modules\FreeRTOS\include\list.h \
   ..\Src\app_ble.h ..\..\..\..\components\btdm\include\gap_api.h \
   ..\..\..\..\components\btdm\include\gap_defines.h ..\Src\app_bt.h \
   ..\Src\app_btdm.h ..\..\..\..\components\btdm\include\hf_api.h \
@@ -102,15 +114,7 @@
   ..\..\..\..\components\btdm\include\map_api.h ..\Src\app_audio.h \
   ..\..\..\..\components\modules\audio\audio_common.h \
   ..\..\..\..\components\modules\audio\audio_scene.h \
-  ..\..\..\..\components\modules\FreeRTOS\include\FreeRTOS.h \
-  ..\Inc\FreeRTOSConfig.h ..\Inc\app_config.h \
-  ..\..\..\..\components\modules\FreeRTOS\include\projdefs.h \
-  ..\..\..\..\components\modules\FreeRTOS\include\portable.h \
-  ..\..\..\..\components\modules\FreeRTOS\include\deprecated_definitions.h \
-  ..\..\..\..\components\modules\FreeRTOS\portable\ARMv8M\non_secure\portable\GCC\ARM_CM33_NTZ\portmacro.h \
-  ..\..\..\..\components\modules\FreeRTOS\include\mpu_wrappers.h \
   ..\..\..\..\components\modules\FreeRTOS\include\task.h \
-  ..\..\..\..\components\modules\FreeRTOS\include\list.h \
   ..\..\..\..\components\modules\audio\audio_common.h \
   ..\..\..\..\components\modules\audio\audio_hw.h \
   ..\..\..\..\components\modules\audio\audio_decoder.h \

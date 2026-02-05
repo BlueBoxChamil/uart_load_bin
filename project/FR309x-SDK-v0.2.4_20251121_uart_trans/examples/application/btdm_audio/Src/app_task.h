@@ -5,6 +5,7 @@
 #include <stdbool.h>
 
 #include "co_list.h"
+#include "py_uart_trans.h"
 
 #define APP_TASK_EVENT_AT_CMD 0x00
 #define APP_TASK_EVENT_RPMSG_INITED 0x01
