@@ -106,3 +106,13 @@ FR309x-SDK-v0.2.4_20251121_uart_trans
 > ```
 > xxd -i 11.sbc > sbc_data.c
 > ```
+
+
+
+> [!tip]
+>
+> 播放sbc音频，播完自动关闭窗口
+>
+> ```
+> ffplay -autoexit 11_low.sbc
+> ```
