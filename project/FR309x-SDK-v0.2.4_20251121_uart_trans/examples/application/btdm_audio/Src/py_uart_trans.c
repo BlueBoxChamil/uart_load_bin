@@ -78,11 +78,7 @@ static void app_py_init(struct __UART_HandleTypeDef *handle);
 static void py_timeout_timer_func();
 UART_HandleTypeDef *uart2Handler();
 
-/*
- * =================================================================================
- * PUBLIC API IMPLEMENTATION
- * =================================================================================
- */
+
 
 /**
  * @brief 下载串口初始化
