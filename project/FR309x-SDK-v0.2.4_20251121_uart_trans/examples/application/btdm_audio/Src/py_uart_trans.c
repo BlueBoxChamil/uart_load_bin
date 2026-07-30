@@ -213,6 +213,9 @@ void py_uart_receive(void)
             printf("flash erase addr = %08d\r\n", addr * PY_FLASH_SECTOR);
             py_uart_flash_erase(addr * PY_FLASH_SECTOR);
             py_uart_send("erase");
+
+            // 防止擦除时间过长，触发单片机超时机制
+            xTimerStart(py_timeout_timer, 0);
         }
 
         py_uart_send("ready");
